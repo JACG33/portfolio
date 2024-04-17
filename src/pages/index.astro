@@ -13,24 +13,30 @@ import ProjectCard from "../components/ProjectCard.astro";
 		<title>Portfolio - FrontEnd Web Developer</title>
 	</head>
 
-	<body class="bg-gray-50/20 dark:bg-gray-900">
+	<body
+		class="bg-gradient-to-t from-gray-100/20 to-white dark:bg-gradient-to-t dark:from-gray-950 dark:to-gray-900"
+	>
 		<!-- Theme Toggle -->
 		<BtnDarkTheme />
 
 		<main
 			class="m-auto grid gap-2 px-4 md:grid-cols-[minmax(100px,280px)_1fr] md:gap-3 md:max-w-6xl md:py-4"
 		>
-			<section class="px-3 py-2 md:sticky md:top-0 md:h-fit">
+			<section
+				class="px-3 py-2 flex flex-col items-center md:sticky md:top-0 md:h-fit"
+			>
 				<!-- Image Profile -->
 				<div class="flex place-content-center py-2">
 					<img
 						class="w-[60%] h-auto m-auto"
 						src="/imgs/icons/jacg.svg"
 						alt="Jacg image profile"
+						width="60"
+						height="60"
 					/>
 				</div>
 				<!-- Say -->
-				<div class="py-2">
+				<div class="py-2 mt-2">
 					<h1 class="text-xl font-bold dark:text-white">
 						Hola soy Joe Casañas👋
 					</h1>
@@ -41,7 +47,7 @@ import ProjectCard from "../components/ProjectCard.astro";
 				<!-- Links -->
 				<div class="py-2 flex items-center gap-2 flex-wrap">
 					<a
-						class="px-2 py-1 rounded-xl border border-gray-400 hover:bg-gray-100 dark:text-gray-50 dark:border-gray-400 dark:hover:bg-gray-400 transition-all duration-200"
+						class="px-2 py-1 rounded-lg border border-gray-400 hover:bg-gray-100 dark:text-gray-50 dark:border-gray-400 dark:hover:bg-gray-400 transition-all duration-200"
 						href="https://github.com/JACG33"
 						target="_blank">GitHub</a
 					>
@@ -82,35 +88,35 @@ import ProjectCard from "../components/ProjectCard.astro";
 
 					<div class="py-2 flex items-center gap-2 flex-wrap">
 						<span
-							class="px-2 rounded-xl border border-orange-300 dark:border-orange-300/50 dark:text-white"
+							class="px-2 rounded-lg border border-orange-300 dark:border-orange-300/50 dark:text-white"
 							>HTML</span
 						>
 						<span
-							class="px-2 rounded-xl border border-yellow-300 dark:border-yellow-300/50 dark:text-white"
+							class="px-2 rounded-lg border border-yellow-300 dark:border-yellow-300/50 dark:text-white"
 							>JavaScript</span
 						>
 						<span
-							class="px-2 rounded-xl border border-blue-300 dark:border-blue-300/50 dark:text-white"
+							class="px-2 rounded-lg border border-blue-300 dark:border-blue-300/50 dark:text-white"
 							>CSS</span
 						>
 						<span
-							class="px-2 rounded-xl border border-sky-300 dark:border-sky-300/50 dark:text-white"
+							class="px-2 rounded-lg border border-sky-300 dark:border-sky-300/50 dark:text-white"
 							>Tailwind CSS</span
 						>
 						<span
-							class="px-2 rounded-xl border border-sky-300 dark:border-sky-300/50 dark:text-white"
+							class="px-2 rounded-lg border border-sky-300 dark:border-sky-300/50 dark:text-white"
 							>React</span
 						>
 						<span
-							class="px-2 rounded-xl border border-rose-300 dark:border-rose-300/50 dark:text-white"
+							class="px-2 rounded-lg border border-rose-300 dark:border-rose-300/50 dark:text-white"
 							>Laravel</span
 						>
 						<span
-							class="px-2 rounded-xl border border-purple-300 dark:border-purple-300/50 dark:text-white"
+							class="px-2 rounded-lg border border-purple-300 dark:border-purple-300/50 dark:text-white"
 							>PHP</span
 						>
 						<span
-							class="px-2 rounded-xl border border-sky-300 dark:border-sky-300/50 dark:text-white"
+							class="px-2 rounded-lg border border-sky-300 dark:border-sky-300/50 dark:text-white"
 							>WordPress</span
 						>
 					</div>

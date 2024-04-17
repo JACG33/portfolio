@@ -2,7 +2,7 @@
 const { imgname, title, link } = Astro.props;
 ---
 
-<div class="lg:flex lg:gap-4 py-2">
+<div class="sm:flex sm:gap-4 py-2">
   <img
     src={`/imgs/projects/${imgname}`}
     alt="Pagina web Gobernación"
@@ -14,19 +14,19 @@ const { imgname, title, link } = Astro.props;
     </h3>
     <!-- <div class="py-2 flex items-center gap-2 flex-wrap">
       <span
-        class="px-2 rounded-xl border border-orange-300 dark:border-orange-300/50 dark:text-white"
+        class="px-2 rounded-lg border border-orange-300 dark:border-orange-300/50 dark:text-white"
         >HTML</span
       >
       <span
-        class="px-2 rounded-xl border border-yellow-300 dark:border-yellow-300/50 dark:text-white"
+        class="px-2 rounded-lg border border-yellow-300 dark:border-yellow-300/50 dark:text-white"
         >JavaScript</span
       >
       <span
-        class="px-2 rounded-xl border border-blue-300 dark:border-blue-300/50 dark:text-white"
+        class="px-2 rounded-lg border border-blue-300 dark:border-blue-300/50 dark:text-white"
         >CSS</span
       >
       <span
-        class="px-2 rounded-xl border border-rose-300 dark:border-rose-300/50 dark:text-white"
+        class="px-2 rounded-lg border border-rose-300 dark:border-rose-300/50 dark:text-white"
         >Laravel</span
       >
     </div> -->
@@ -35,7 +35,7 @@ const { imgname, title, link } = Astro.props;
     </p>
     <div class="py-2 flex items-center gap-2 flex-wrap">
       <a
-        class="px-2 py-1 rounded-xl border border-gray-400 hover:bg-gray-100 dark:text-gray-50 dark:border-gray-400 dark:hover:bg-gray-400 transition-all duration-200"
+        class="px-2 py-1 rounded-lg border border-gray-400 hover:bg-gray-100 dark:text-gray-50 dark:border-gray-400 dark:hover:bg-gray-400 transition-all duration-200"
         href={link}
         target="_blank">Visitar</a
       >
