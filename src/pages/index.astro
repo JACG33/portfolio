@@ -1,0 +1,229 @@
+---
+import BtnDarkTheme from "../components/BtnDarkTheme.astro";
+import LaboralExperience from "../components/LaboralExperience.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+---
+
+<!doctype html>
+<html lang="es" class="dark">
+	<head>
+		<meta charset="UTF-8" />
+		<link rel="icon" type="image/svg+xml" href="/imgs/icons/jacg.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Portfolio - FrontEnd Web Developer</title>
+	</head>
+
+	<body class="bg-gray-50/20 dark:bg-gray-900">
+		<!-- Theme Toggle -->
+		<BtnDarkTheme />
+
+		<main
+			class="m-auto grid gap-2 px-4 md:grid-cols-[minmax(100px,280px)_1fr] md:gap-3 md:max-w-6xl md:py-4"
+		>
+			<section class="px-3 py-2 md:sticky md:top-0 md:h-fit">
+				<!-- Image Profile -->
+				<div class="flex place-content-center py-2">
+					<img
+						class="w-[60%] h-auto m-auto"
+						src="/imgs/icons/jacg.svg"
+						alt="Jacg image profile"
+					/>
+				</div>
+				<!-- Say -->
+				<div class="py-2">
+					<h1 class="text-xl font-bold dark:text-white">
+						Hola soy Joe Casañas👋
+					</h1>
+					<p class="py-2 dark:text-gray-50">
+						Desarrollador FrontEnd Con 2 años de experiencia.
+					</p>
+				</div>
+				<!-- Links -->
+				<div class="py-2 flex items-center gap-2 flex-wrap">
+					<a
+						class="px-2 py-1 rounded-xl border border-gray-400 hover:bg-gray-100 dark:text-gray-50 dark:border-gray-400 dark:hover:bg-gray-400 transition-all duration-200"
+						href="https://github.com/JACG33"
+						target="_blank">GitHub</a
+					>
+				</div>
+			</section>
+
+			<section>
+				<!-- About Me -->
+				<section class="px-3 py-4">
+					<h2 class="font-bold text-lg dark:text-white">Sobre mi</h2>
+					<p class="py-2 dark:text-gray-50">
+						Soy desarrollador web FrontEnd, con orientación a la programación
+						más que al diseño de interfaces gráficas, pero con los conocimientos
+						suficientes para maquetar cualquier diseño que me sea entregado,
+						además del FrontEnd también tengo conocimientos intermedios en
+						BackEnd, suficientes para relacionarme con el mismo.
+					</p>
+				</section>
+
+				<!-- Laboral Expirience -->
+				<section class="px-3 py-4">
+					<h2 class="font-bold text-lg dark:text-white">Experiencia laboral</h2>
+
+					<LaboralExperience
+						place={"Gobernación del Estado Bolívar"}
+						date={"2022"}
+						active
+					>
+						Participo como FrontEnd Developer en los diferentes proyectos que
+						allí se realizan, aprendiendo y aplicando nuevas herramientas para
+						el desarrollo de los mismos.
+					</LaboralExperience>
+				</section>
+
+				<!-- Skills -->
+				<section class="px-3 py-4">
+					<h2 class="font-bold text-lg dark:text-white">Habilidades</h2>
+
+					<div class="py-2 flex items-center gap-2 flex-wrap">
+						<span
+							class="px-2 rounded-xl border border-orange-300 dark:border-orange-300/50 dark:text-white"
+							>HTML</span
+						>
+						<span
+							class="px-2 rounded-xl border border-yellow-300 dark:border-yellow-300/50 dark:text-white"
+							>JavaScript</span
+						>
+						<span
+							class="px-2 rounded-xl border border-blue-300 dark:border-blue-300/50 dark:text-white"
+							>CSS</span
+						>
+						<span
+							class="px-2 rounded-xl border border-sky-300 dark:border-sky-300/50 dark:text-white"
+							>Tailwind CSS</span
+						>
+						<span
+							class="px-2 rounded-xl border border-sky-300 dark:border-sky-300/50 dark:text-white"
+							>React</span
+						>
+						<span
+							class="px-2 rounded-xl border border-rose-300 dark:border-rose-300/50 dark:text-white"
+							>Laravel</span
+						>
+						<span
+							class="px-2 rounded-xl border border-purple-300 dark:border-purple-300/50 dark:text-white"
+							>PHP</span
+						>
+						<span
+							class="px-2 rounded-xl border border-sky-300 dark:border-sky-300/50 dark:text-white"
+							>WordPress</span
+						>
+					</div>
+				</section>
+
+				<!-- Projects -->
+				<section class="px-3 py-4">
+					<h2 class="font-bold text-lg dark:text-white">Proyectos</h2>
+
+					<ProjectCard
+						title={"Pagina Web Gobernación del Estado Bolívar"}
+						imgname={"gob.png"}
+						link={"https://e-bolivar.gob.ve"}
+					>
+						Pagina web para usuarios (externos) y trabajadores de la
+						Gobernación.
+					</ProjectCard>
+
+					<ProjectCard
+						title={"Pagina Web Biblioteca Pública Central Rómulo Gallegos"}
+						imgname={"bpcrg.png"}
+						link={"http://test-web.ezyro.com"}
+					>
+						Por motivos ajenos este proyectos aun no esta bajo un dominio y
+						hosting oficiales, pero se encuentra en un hosting gratuito, esta
+						pagina web esta orientada a la difusión de las actividades que se
+						realizan en la Biblioteca.
+					</ProjectCard>
+				</section>
+			</section>
+		</main>
+
+		<script>
+			document.addEventListener("DOMContentLoaded", (e) => {
+				const getThemeConfig = () => {
+					let theme = window.localStorage.getItem("theme");
+					if (theme) {
+						let configTheme = JSON.parse(theme);
+						if (configTheme.theme == "dark") {
+							document
+								.querySelector("svg.icon-sun")
+								.classList.remove("opacity-0");
+							document
+								.querySelector("svg.icon-moon")
+								.classList.add("opacity-0");
+							document.querySelector("html").classList.add("dark");
+							document.querySelector("html").classList.remove("ligth");
+						}
+						if (configTheme.theme == "ligth") {
+							document.querySelector("svg.icon-sun").classList.add("opacity-0");
+							document
+								.querySelector("svg.icon-moon")
+								.classList.remove("opacity-0");
+							document.querySelector("html").classList.remove("dark");
+							document.querySelector("html").classList.add("ligth");
+						}
+					}
+				};
+				getThemeConfig();
+
+				document.addEventListener("click", (e) => {
+					const { target } = e;
+
+					if (target.closest("[data-btn=toggletheme]")) {
+						console.log(target);
+						if (document.querySelector("html").classList.contains("dark")) {
+							target
+								.closest("[data-btn=toggletheme]")
+								.querySelector("svg.icon-sun")
+								.classList.add("opacity-0");
+							target
+								.closest("[data-btn=toggletheme]")
+								.querySelector("svg.icon-moon")
+								.classList.remove("opacity-0");
+							document.querySelector("html").classList.toggle("dark");
+							document.querySelector("html").classList.toggle("ligth");
+						} else {
+							target
+								.closest("[data-btn=toggletheme]")
+								.querySelector("svg.icon-sun")
+								.classList.remove("opacity-0");
+							target
+								.closest("[data-btn=toggletheme]")
+								.querySelector("svg.icon-moon")
+								.classList.add("opacity-0");
+							document.querySelector("html").classList.toggle("dark");
+							document.querySelector("html").classList.toggle("ligth");
+						}
+
+						let theme = window.localStorage.getItem("theme");
+						if (theme) {
+							let configTheme = JSON.parse(theme);
+							if (configTheme.theme == "dark") {
+								window.localStorage.setItem(
+									"theme",
+									JSON.stringify({ theme: "ligth" }),
+								);
+							}
+							if (configTheme.theme == "ligth") {
+								window.localStorage.setItem(
+									"theme",
+									JSON.stringify({ theme: "dark" }),
+								);
+							}
+						} else {
+							window.localStorage.setItem(
+								"theme",
+								JSON.stringify({ theme: "dark" }),
+							);
+						}
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
