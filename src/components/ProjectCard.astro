@@ -2,11 +2,11 @@
 const { imgname, title, link } = Astro.props;
 ---
 
-<div class="sm:flex sm:gap-4 py-2">
+<div class="flex flex-col py-2 w-72 mx-auto">
   <img
     src={`/imgs/projects/${imgname}`}
     alt="Pagina web Gobernación"
-    class="rounded-md my-2"
+    class="rounded-md my-2 w-full object-cover"
   />
   <div>
     <h3 class="py-2 font-semibold dark:text-white">
@@ -30,15 +30,28 @@ const { imgname, title, link } = Astro.props;
         >Laravel</span
       >
     </div> -->
-    <p class="py-2 dark:text-gray-50">
+    <p class="py-2 dark:text-gray-50 text-balance">
       <slot />
     </p>
     <div class="py-2 flex items-center gap-2 flex-wrap">
       <a
-        class="px-2 py-1 rounded-lg border border-gray-400 hover:bg-gray-100 dark:text-gray-50 dark:border-gray-400 dark:hover:bg-gray-400 transition-all duration-200"
+        class="flex justify-between items-center gap-1 px-2 py-1 rounded-lg border border-indigo-700 hover:bg-indigo-600 hover:text-white dark:text-indigo-50 dark:border-indigo-700 dark:hover:bg-indigo-600 transition-all duration-150 group hover:shadow-sm hover:shadow-indigo-600/40"
         href={link}
-        target="_blank">Visitar</a
-      >
+        target="_blank"
+        >Visitar <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="group-hover:-translate-y-[1px]"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"></path></svg
+        ></a>
     </div>
   </div>
 </div>
