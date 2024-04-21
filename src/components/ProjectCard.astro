@@ -1,5 +1,6 @@
 ---
 const { imgname, title, link } = Astro.props;
+const dynamicid = `popover${Math.ceil(Math.random() * 9999)}`;
 ---
 
 <div class="flex flex-col py-2 w-72 mx-auto">
@@ -30,10 +31,7 @@ const { imgname, title, link } = Astro.props;
         >Laravel</span
       >
     </div> -->
-    <p class="py-2 dark:text-gray-50 text-balance">
-      <slot />
-    </p>
-    <div class="py-2 flex items-center gap-2 flex-wrap">
+    <div class="py-2 flex justify-between items-center gap-2 flex-wrap">
       <a
         class="flex justify-between items-center gap-1 px-2 py-1 rounded-lg border border-indigo-700 hover:bg-indigo-600 hover:text-white dark:text-indigo-50 dark:border-indigo-700 dark:hover:bg-indigo-600 transition-all duration-150 group hover:shadow-sm hover:shadow-indigo-600/40"
         href={link}
@@ -51,7 +49,38 @@ const { imgname, title, link } = Astro.props;
           class="group-hover:-translate-y-[1px]"
           ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
             d="M17 7l-10 10"></path><path d="M8 7l9 0l0 9"></path></svg
-        ></a>
+        ></a
+      >
+      <button
+        type="button"
+        title="Descripción"
+        popovertarget={dynamicid}
+        class="flex justify-between items-center gap-1 px-2 py-1 rounded-lg border border-blue-700 hover:bg-blue-600 hover:text-white dark:text-blue-50 dark:border-blue-700 dark:hover:bg-blue-600 transition-all duration-150 group hover:shadow-sm hover:shadow-blue-600/40"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-dots"
+          ><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+            d="M5 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path
+            d="M12 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path><path
+            d="M19 12m-1 0a1 1 0 1 0 2 0a1 1 0 1 0 -2 0"></path></svg
+        >
+      </button>
+    </div>
+    <div popover id={dynamicid} class="dark:bg-gray-800 w-[90%] max-w-[430px] rounded-md shadow-lg backdrop:bg-gray-950/20">
+      <div class="flex justify-center items-center w-full p-2">
+        <p class="py-2 dark:text-gray-50 text-pretty">
+          <slot />
+        </p>
+      </div>
     </div>
   </div>
 </div>
