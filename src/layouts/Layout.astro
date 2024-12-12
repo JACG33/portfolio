@@ -3,49 +3,112 @@ interface Props {
 	title: string;
 }
 
+import BtnDarkTheme from "../components/BtnDarkTheme.astro";
+import LaboralExperience from "../components/LaboralExperience.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import Skills from "../components/Skills.astro";
+
 const { title } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" class="dark">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
+		<link rel="icon" type="image/svg+xml" href="/imgs/icons/jacg.svg" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>{title}</title>
 	</head>
-	<body>
+
+	<body
+		class="bg-gradient-to-t from-gray-100/20 to-white dark:bg-gradient-to-t dark:from-gray-950 dark:to-gray-900"
+	>
+		<!-- Theme Toggle -->
+		<BtnDarkTheme />
+
 		<slot />
+		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+		<script type="module">
+			document.addEventListener("DOMContentLoaded", (e) => {
+				const getThemeConfig = () => {
+					let theme = window.localStorage.getItem("theme");
+					if (theme) {
+						let configTheme = JSON.parse(theme);
+						if (configTheme.theme == "dark") {
+							document
+								.querySelector("svg.icon-sun")
+								.classList.remove("opacity-0");
+							document
+								.querySelector("svg.icon-moon")
+								.classList.add("opacity-0");
+							document.querySelector("html").classList.add("dark");
+							document.querySelector("html").classList.remove("ligth");
+						}
+						if (configTheme.theme == "ligth") {
+							document.querySelector("svg.icon-sun").classList.add("opacity-0");
+							document
+								.querySelector("svg.icon-moon")
+								.classList.remove("opacity-0");
+							document.querySelector("html").classList.remove("dark");
+							document.querySelector("html").classList.add("ligth");
+						}
+					}
+				};
+				getThemeConfig();
+
+				document.addEventListener("click", (e) => {
+					const { target } = e;
+
+					if (target.closest("[data-btn=toggletheme]")) {
+						console.log(target);
+						if (document.querySelector("html").classList.contains("dark")) {
+							target
+								.closest("[data-btn=toggletheme]")
+								.querySelector("svg.icon-sun")
+								.classList.add("opacity-0");
+							target
+								.closest("[data-btn=toggletheme]")
+								.querySelector("svg.icon-moon")
+								.classList.remove("opacity-0");
+							document.querySelector("html").classList.toggle("dark");
+							document.querySelector("html").classList.toggle("ligth");
+						} else {
+							target
+								.closest("[data-btn=toggletheme]")
+								.querySelector("svg.icon-sun")
+								.classList.remove("opacity-0");
+							target
+								.closest("[data-btn=toggletheme]")
+								.querySelector("svg.icon-moon")
+								.classList.add("opacity-0");
+							document.querySelector("html").classList.toggle("dark");
+							document.querySelector("html").classList.toggle("ligth");
+						}
+
+						let theme = window.localStorage.getItem("theme");
+						if (theme) {
+							let configTheme = JSON.parse(theme);
+							if (configTheme.theme == "dark") {
+								window.localStorage.setItem(
+									"theme",
+									JSON.stringify({ theme: "ligth" }),
+								);
+							}
+							if (configTheme.theme == "ligth") {
+								window.localStorage.setItem(
+									"theme",
+									JSON.stringify({ theme: "dark" }),
+								);
+							}
+						} else {
+							window.localStorage.setItem(
+								"theme",
+								JSON.stringify({ theme: "dark" }),
+							);
+						}
+					}
+				});
+			});
+		</script>
 	</body>
 </html>
-<style is:global>
-	:root {
-		--accent: 136, 58, 234;
-		--accent-light: 224, 204, 250;
-		--accent-dark: 49, 10, 101;
-		--accent-gradient: linear-gradient(
-			45deg,
-			rgb(var(--accent)),
-			rgb(var(--accent-light)) 30%,
-			white 60%
-		);
-	}
-	html {
-		font-family: system-ui, sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
-	code {
-		font-family:
-			Menlo,
-			Monaco,
-			Lucida Console,
-			Liberation Mono,
-			DejaVu Sans Mono,
-			Bitstream Vera Sans Mono,
-			Courier New,
-			monospace;
-	}
-</style>

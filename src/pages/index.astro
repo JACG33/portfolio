@@ -1,255 +1,139 @@
 ---
-import BtnDarkTheme from "../components/BtnDarkTheme.astro";
+import Layout from "../layouts/Layout.astro";
 import LaboralExperience from "../components/LaboralExperience.astro";
 import ProjectCard from "../components/ProjectCard.astro";
+import Skills from "../components/Skills.astro";
+import GitHubProjects from "../components/GitHubProjects.astro";
 ---
 
-<!doctype html>
-<html lang="es" class="dark">
-	<head>
-		<meta charset="UTF-8" />
-		<link rel="icon" type="image/svg+xml" href="/imgs/icons/jacg.svg" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Portfolio - Frontend Web Developer</title>
-	</head>
-
-	<body
-		class="bg-gradient-to-t from-gray-100/20 to-white dark:bg-gradient-to-t dark:from-gray-950 dark:to-gray-900"
+<Layout title="Portfolio - Frontend Web Developer">
+	<main
+		class="m-auto grid gap-2 px-4 md:grid-cols-[minmax(100px,280px)_1fr] md:gap-3 md:max-w-6xl md:py-4"
 	>
-		<!-- Theme Toggle -->
-		<BtnDarkTheme />
-
-		<main
-			class="m-auto grid gap-2 px-4 md:grid-cols-[minmax(100px,280px)_1fr] md:gap-3 md:max-w-6xl md:py-4"
+		<section
+			class="px-3 py-2 flex flex-col items-center md:sticky md:top-0 md:h-fit"
 		>
-			<section
-				class="px-3 py-2 flex flex-col items-center md:sticky md:top-0 md:h-fit"
-			>
-				<!-- Image Profile -->
-				<div class="flex place-content-center py-2">
-					<img
-						class="w-[60%] h-auto m-auto"
-						src="/imgs/icons/jacg.svg"
-						alt="Jacg image profile"
-						width="60"
-						height="60"
-					/>
-				</div>
-				<!-- Say -->
-				<div class="py-2 mt-2">
-					<h1 class="text-xl font-bold dark:text-white">
-						Hola soy Joe Casañas👋
-					</h1>
-					<p class="py-2 dark:text-gray-50">
-						Desarrollador Frontend con 2 años de experiencia.
-					</p>
-				</div>
-				<!-- Links -->
-				<div class="py-2 flex items-center gap-2 flex-wrap">
-					<a
-						class="flex justify-between items-center gap-1 px-2 py-1 rounded-lg border border-indigo-700 hover:bg-indigo-600 hover:text-white dark:text-indigo-50 dark:border-indigo-700 dark:hover:bg-indigo-600 transition-all duration-150 group hover:shadow-sm hover:shadow-indigo-600/40"
-						href="https://github.com/JACG33"
-						target="_blank"
+			<!-- Image Profile -->
+			<div class="flex place-content-center py-2">
+				<img
+					class="w-[60%] h-auto m-auto"
+					src="/imgs/icons/jacg.svg"
+					alt="Jacg image profile"
+					width="60"
+					height="60"
+				/>
+			</div>
+			<!-- Say -->
+			<div class="py-2 mt-2">
+				<h1 class="text-xl font-bold dark:text-white">
+					Hola soy Joe Casañas👋
+				</h1>
+				<p class="py-2 dark:text-gray-50">
+					Desarrollador Frontend con 2 años de experiencia.
+				</p>
+			</div>
+			<!-- Links -->
+			<div class="py-2 flex items-center gap-2 flex-wrap">
+				<a
+					class="flex justify-between items-center gap-1 px-2 py-1 rounded-lg border border-indigo-700 hover:bg-indigo-600 hover:text-white dark:text-indigo-50 dark:border-indigo-700 dark:hover:bg-indigo-600 transition-all duration-150 group hover:shadow-sm hover:shadow-indigo-600/40"
+					href="https://github.com/JACG33"
+					target="_blank"
+				>
+					GitHub <svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="group-hover:-translate-y-[1px]"
+						><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+							d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+						></path></svg
 					>
-						GitHub <svg
-							xmlns="http://www.w3.org/2000/svg"
-							width="24"
-							height="24"
-							viewBox="0 0 24 24"
-							fill="none"
-							stroke="currentColor"
-							stroke-width="2"
-							stroke-linecap="round"
-							stroke-linejoin="round"
-							class="group-hover:-translate-y-[1px]"
-							><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
-								d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
-							></path></svg
-						>
-					</a>
-				</div>
+				</a>
+			</div>
+		</section>
+
+		<section>
+			<!-- About Me -->
+			<section class="px-3 py-4">
+				<h2 class="font-bold text-lg dark:text-white">Sobre mi</h2>
+				<p class="py-2 dark:text-gray-50 text-pretty">
+					Soy desarrollador web Frontend, con orientación a la programación más
+					que al diseño de interfaces gráficas, pero con los conocimientos
+					suficientes para maquetar cualquier diseño, además del Frontend
+					también tengo conocimientos intermedios en Backend, suficientes para
+					relacionarme con el mismo.
+				</p>
 			</section>
 
-			<section>
-				<!-- About Me -->
-				<section class="px-3 py-4">
-					<h2 class="font-bold text-lg dark:text-white">Sobre mi</h2>
-					<p class="py-2 dark:text-gray-50 text-pretty">
-						Soy desarrollador web Frontend, con orientación a la programación
-						más que al diseño de interfaces gráficas, pero con los conocimientos
-						suficientes para maquetar cualquier diseño, además del Frontend
-						también tengo conocimientos intermedios en Backend, suficientes para
-						relacionarme con el mismo.
-					</p>
-				</section>
+			<!-- Laboral Expirience -->
+			<section class="px-3 py-4">
+				<h2 class="font-bold text-lg dark:text-white">Experiencia laboral</h2>
 
-				<!-- Laboral Expirience -->
-				<section class="px-3 py-4">
-					<h2 class="font-bold text-lg dark:text-white">Experiencia laboral</h2>
+				<LaboralExperience
+					place={"Gobernación del Estado Bolívar"}
+					date={"2022"}
+					active
+				>
+					Participo como Frontend Developer en los diferentes proyectos que allí
+					se realizan, aprendiendo y aplicando nuevos conocimientos para el
+					desarrollo de los mismos.
+				</LaboralExperience>
+			</section>
 
-					<LaboralExperience
-						place={"Gobernación del Estado Bolívar"}
-						date={"2022"}
-						active
-					>
-						Participo como Frontend Developer en los diferentes proyectos que
-						allí se realizan, aprendiendo y aplicando nuevos conocimientos para
-						el desarrollo de los mismos.
-					</LaboralExperience>
-				</section>
+			<!-- Skills -->
+			<section class="px-3 py-4">
+				<h2 class="font-bold text-lg dark:text-white">Habilidades</h2>
+				<Skills />
+			</section>
 
-				<!-- Skills -->
-				<section class="px-3 py-4">
-					<h2 class="font-bold text-lg dark:text-white">Habilidades</h2>
+			<!-- Projects -->
+			<section class="px-3 py-4">
+				<h2 class="font-bold text-lg dark:text-white">Proyectos</h2>
 
-					<div class="py-2 flex items-center gap-2 flex-wrap">
-						<span
-							class="px-2 rounded-lg border border-orange-300 dark:border-orange-300/50 dark:text-white"
-							>HTML</span
-						>
-						<span
-							class="px-2 rounded-lg border border-yellow-300 dark:border-yellow-300/50 dark:text-white"
-							>JavaScript</span
-						>
-						<span
-							class="px-2 rounded-lg border border-blue-300 dark:border-blue-300/50 dark:text-white"
-							>CSS</span
-						>
-						<span
-							class="px-2 rounded-lg border border-sky-300 dark:border-sky-300/50 dark:text-white"
-							>Tailwind CSS</span
-						>
-						<span
-							class="px-2 rounded-lg border border-sky-300 dark:border-sky-300/50 dark:text-white"
-							>React</span
-						>
-						<span
-							class="px-2 rounded-lg border border-rose-300 dark:border-rose-300/50 dark:text-white"
-							>Laravel</span
-						>
-						<span
-							class="px-2 rounded-lg border border-purple-300 dark:border-purple-300/50 dark:text-white"
-							>PHP</span
-						>
-						<span
-							class="px-2 rounded-lg border border-sky-300 dark:border-sky-300/50 dark:text-white"
-							>WordPress</span
-						>
-					</div>
-				</section>
-
-				<!-- Projects -->
-				<section class="px-3 py-4">
-					<h2 class="font-bold text-lg dark:text-white">Proyectos</h2>
-
-					<div
-						class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))]"
-						id="proyectos"
-					>
+				<div
+					class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2"
+					id="proyectos"
+				>
 					<ProjectCard
-							title={"Pagina Web Gobernación del Estado Bolívar"}
-							imgname={"gob.png"}
-							link={"https://e-bolivar.gob.ve"}
-						>
-							Pagina web para usuarios (externos) y trabajadores de la
-							Gobernación.
-						</ProjectCard>
-					</div>
-				</section>
+						title={"Pagina Web Gobernación del Estado Bolívar"}
+						imgname={"gob.png"}
+						link={"https://e-bolivar.gob.ve"}
+					>
+						Pagina web para usuarios (externos) y trabajadores de la
+						Gobernación.
+					</ProjectCard>
+				</div>
 			</section>
-		</main>
 
-		<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-		<script type="module">
-			document.addEventListener("DOMContentLoaded", (e) => {
-				const getThemeConfig = () => {
-					let theme = window.localStorage.getItem("theme");
-					if (theme) {
-						let configTheme = JSON.parse(theme);
-						if (configTheme.theme == "dark") {
-							document
-								.querySelector("svg.icon-sun")
-								.classList.remove("opacity-0");
-							document
-								.querySelector("svg.icon-moon")
-								.classList.add("opacity-0");
-							document.querySelector("html").classList.add("dark");
-							document.querySelector("html").classList.remove("ligth");
-						}
-						if (configTheme.theme == "ligth") {
-							document.querySelector("svg.icon-sun").classList.add("opacity-0");
-							document
-								.querySelector("svg.icon-moon")
-								.classList.remove("opacity-0");
-							document.querySelector("html").classList.remove("dark");
-							document.querySelector("html").classList.add("ligth");
-						}
-					}
-				};
-				getThemeConfig();
+			<!-- GitHub Projects -->
+			<section class="px-3 py-4">
+				<h2 class="font-bold text-lg dark:text-white">Proyectos GitHub</h2>
+				<p class="dark:text-white py-2">
+					Estos son algunos proyectos de practica.
+				</p>
+				<GitHubProjects />
+			</section>
+		</section>
+	</main>
+</Layout>
 
-				document.addEventListener("click", (e) => {
-					const { target } = e;
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		const { createClient } = supabase;
+		const clientSupa = createClient(
+			"https://rpslyimvndavsmyydcep.supabase.co",
+			"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJwc2x5aW12bmRhdnNteXlkY2VwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM5MjUwODcsImV4cCI6MjA0OTUwMTA4N30.YTHchne5R89VKb45UmeDZNGFMFcPEoFiEARFkBTHQe0",
+		);
 
-					if (target.closest("[data-btn=toggletheme]")) {
-						console.log(target);
-						if (document.querySelector("html").classList.contains("dark")) {
-							target
-								.closest("[data-btn=toggletheme]")
-								.querySelector("svg.icon-sun")
-								.classList.add("opacity-0");
-							target
-								.closest("[data-btn=toggletheme]")
-								.querySelector("svg.icon-moon")
-								.classList.remove("opacity-0");
-							document.querySelector("html").classList.toggle("dark");
-							document.querySelector("html").classList.toggle("ligth");
-						} else {
-							target
-								.closest("[data-btn=toggletheme]")
-								.querySelector("svg.icon-sun")
-								.classList.remove("opacity-0");
-							target
-								.closest("[data-btn=toggletheme]")
-								.querySelector("svg.icon-moon")
-								.classList.add("opacity-0");
-							document.querySelector("html").classList.toggle("dark");
-							document.querySelector("html").classList.toggle("ligth");
-						}
-
-						let theme = window.localStorage.getItem("theme");
-						if (theme) {
-							let configTheme = JSON.parse(theme);
-							if (configTheme.theme == "dark") {
-								window.localStorage.setItem(
-									"theme",
-									JSON.stringify({ theme: "ligth" }),
-								);
-							}
-							if (configTheme.theme == "ligth") {
-								window.localStorage.setItem(
-									"theme",
-									JSON.stringify({ theme: "dark" }),
-								);
-							}
-						} else {
-							window.localStorage.setItem(
-								"theme",
-								JSON.stringify({ theme: "dark" }),
-							);
-						}
-					}
-				});
-
-				const { createClient } = supabase;
-				const clientSupa = createClient(
-					"https://rpslyimvndavsmyydcep.supabase.co",
-					"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJwc2x5aW12bmRhdnNteXlkY2VwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzM5MjUwODcsImV4cCI6MjA0OTUwMTA4N30.YTHchne5R89VKb45UmeDZNGFMFcPEoFiEARFkBTHQe0",
-				);
-
-				const renderCard = ({ description, title, img, url }) => {
-					const dynamicid = `popover${Math.ceil(Math.random() * 9999)}`;
-					return `
+		const renderCard = ({ description, title, img, url }) => {
+			const dynamicid = `popover${Math.ceil(Math.random() * 9999)}`;
+			return `
 						<div class="flex flex-col py-2 w-72 mx-auto">
 						  <img
 						    src="${img}"
@@ -314,35 +198,31 @@ import ProjectCard from "../components/ProjectCard.astro";
 						  </div>
 						</div>
 					`;
-				};
+		};
 
-				const getData = async () => {
-					try {
-						const { data, error } = await clientSupa
-							.from("projects")
-							.select(`title,description,img,url`);
+		const getData = async () => {
+			try {
+				const { data, error } = await clientSupa
+					.from("projects")
+					.select(`title,description,img,url`);
 
-						console.log(data, error);
+				let tmp = ``;
+				data.map((d) => {
+					tmp += renderCard({
+						description: d.description,
+						title: d.title,
+						img: d.img,
+						url: d.url,
+					});
+				});
 
-						let tmp = ``;
-						data.map((d) => {
-							tmp += renderCard({
-								description: d.description,
-								title: d.title,
-								img: d.img,
-								url: d.url,
-							});
-						});
+				document.querySelector("#proyectos").innerHTML = tmp;
+			} catch (e) {
+				document.querySelector("#proyectos").innerHTML =
+					"Ocurrio un error al cargar los proyectos";
+			}
+		};
 
-						document.querySelector("#proyectos").innerHTML = tmp;
-					} catch (e) {
-						document.querySelector("#proyectos").innerHTML =
-							"Ocurrio un error al cargar los proyectos";
-					}
-				};
-
-				getData();
-			});
-		</script>
-	</body>
-</html>
+		getData();
+	});
+</script>

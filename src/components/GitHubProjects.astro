@@ -1,0 +1,154 @@
+<div
+	class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-4 py-2"
+	id="projects_git"
+>
+</div>
+
+<script>
+	document.addEventListener("DOMContentLoaded", () => {
+		/**
+		 * Funcion creadora de tarjeta.
+		 * @param {Object} opc Objecto de opciones/parametros.
+		 * @param {String} opc.description Descripcion.
+		 * @param {String} opc.title Titulo.
+		 * @param {String} opc.urlRepo Url del repositorio.
+		 * @param {String} opc.urlHomePage Url del Pagina web.
+		 */
+		const renderCard = ({
+			description = "",
+			title = "",
+			img = "",
+			urlRep = "",
+			urlHomePage = "",
+		}) => {
+			const dynamicid = `popover${Math.ceil(Math.random() * 9999)}`;
+			return `
+						<div class="rounded-lg border border-blue-500 dark:border-white grid grid-cols-[50px_1fr] w-full max-w-64 mx-auto overflow-hidden">
+							<div class="w-full h-full dark:bg-white bg-transparent flex items-center justify-center mx-auto">
+							  <svg
+									xmlns="http://www.w3.org/2000/svg"
+									width="40"
+									height="40"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									stroke-width="2"
+									stroke-linecap="round"
+									stroke-linejoin="round"
+									class="group-hover:-translate-y-[1px]"
+									><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><path
+										d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+									></path></svg
+								>
+							</div>
+						  <div class="p-2">
+						    <h3 class="py-2 font-semibold dark:text-white text-center uppercase">
+						      ${title}
+						    </h3>
+						    <p class="dark:text-white">
+						    	${description.length > 30 ? description.slice(0, 50) + "..." : description}
+						    </p>
+						    <div class="py-2 flex justify-between items-center gap-2 flex-wrap">
+						      <button
+						        type="button"
+						        title="Descripción"
+						        popovertarget="${dynamicid}"
+						        class="flex justify-between items-center gap-1 px-2 py-1 rounded-lg border border-blue-700 hover:bg-blue-600 hover:text-white dark:text-blue-50 dark:border-blue-700 dark:hover:bg-blue-600 transition-all duration-150 group hover:shadow-sm hover:shadow-blue-600/40"
+						      >
+						        Ver más
+						      </button>
+						    </div>
+						    <div popover id="${dynamicid}" class="dark:bg-gray-800 w-[90%] max-w-[430px] rounded-md shadow-lg backdrop:bg-gray-950/20">
+						      <div class="flex flex-col w-full p-2">
+						        <p class="py-2 dark:text-gray-50 text-pretty">
+						          ${description}
+						        </p>
+
+						        <div class="flex justify-between items-center gap-2 px-2">
+						        	${
+												urlHomePage != ""
+													? `<a
+											        class="text-blue-500 underline"
+											        href="${urlHomePage}"
+											        target="_blank"
+											        >Visitar Pagina Web</a
+											      >`
+													: ""
+											}
+
+									      <a
+									        class="text-blue-500 underline"
+									        href="${urlRep}"
+									        target="_blank"
+									        >Visitar Repositorio</a
+									      >
+						        </div>
+						        
+						      </div>
+						    </div>
+						  </div>
+						</div>
+					`;
+		};
+
+		let tmp = ``;
+
+		const getRepos = async () => {
+			try {
+				const repo1 = await fetch(
+					"https://api.github.com/repos/jacg33/template-builder",
+				);
+				const json1 = await repo1.json();
+
+				tmp += renderCard({
+					title: json1.name,
+					description: json1.description,
+					urlHomePage: json1.homepage,
+					urlRep: json1.html_url,
+				});
+
+				//
+				const repo2 = await fetch(
+					"https://api.github.com/repos/jacg33/password-generator",
+				);
+				const json2 = await repo2.json();
+
+				tmp += renderCard({
+					title: json2.name,
+					description: json2.description,
+					urlHomePage: json2.homepage,
+					urlRep: json2.html_url,
+				});
+
+				//
+				const repo3 = await fetch(
+					"https://api.github.com/repos/jacg33/multiple-components",
+				);
+				const json3 = await repo3.json();
+
+				tmp += renderCard({
+					title: json3.name,
+					description: json3.description,
+					urlHomePage: json3.homepage,
+					urlRep: json3.html_url,
+				});
+
+				//
+				const repo4 = await fetch(
+					"https://api.github.com/repos/jacg33/app-control",
+				);
+				const json4 = await repo4.json();
+
+				tmp += renderCard({
+					title: json4.name,
+					description: json4.description,
+					urlRep: json4.html_url,
+				});
+				
+			} catch (e) {}
+			document.querySelector("#projects_git").innerHTML = tmp;
+		};
+
+		getRepos();
+	});
+</script>
