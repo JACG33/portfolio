@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import LaboralExperience from "../components/LaboralExperience.astro";
-import ProjectCard from "../components/ProjectCard.astro";
+import SkeletonCard from "../components/SkeletonCard.astro";
 import Skills from "../components/Skills.astro";
 import GitHubProjects from "../components/GitHubProjects.astro";
 ---
@@ -101,14 +101,8 @@ import GitHubProjects from "../components/GitHubProjects.astro";
 					class="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-2"
 					id="proyectos"
 				>
-					<ProjectCard
-						title={"Pagina Web Gobernación del Estado Bolívar"}
-						imgname={"gob.png"}
-						link={"https://e-bolivar.gob.ve"}
-					>
-						Pagina web para usuarios (externos) y trabajadores de la
-						Gobernación.
-					</ProjectCard>
+					<SkeletonCard/>
+					<SkeletonCard/>
 				</div>
 			</section>
 
