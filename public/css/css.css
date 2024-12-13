@@ -1,0 +1,19 @@
+.say__hi{
+	transform-origin: bottom;
+	display: inline-block;
+	transition: transform 500ms;
+	animation: sayHi 1.25s infinite linear;
+}
+
+@keyframes sayHi{
+	0%{
+		transform: rotateZ(10deg);
+	}
+
+	50%{
+		transform: rotateZ(0deg);
+	}
+	100%{
+		transform: rotateZ(10deg);
+	}
+}

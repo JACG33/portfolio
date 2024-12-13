@@ -7,6 +7,7 @@ import GitHubProjects from "../components/GitHubProjects.astro";
 ---
 
 <Layout title="Portfolio - Frontend Web Developer">
+	<link rel="stylesheet" href="css/css.css">
 	<main
 		class="m-auto grid gap-2 px-4 md:grid-cols-[minmax(100px,280px)_1fr] md:gap-3 md:max-w-6xl md:py-4"
 	>
@@ -16,20 +17,20 @@ import GitHubProjects from "../components/GitHubProjects.astro";
 			<!-- Image Profile -->
 			<div class="flex place-content-center py-2">
 				<img
-					class="w-[60%] h-auto m-auto"
-					src="/imgs/icons/jacg.svg"
+					class="w-full md:w-[60%] h-auto m-auto drop-shadow-[0px_0px_40px_#87daed15]"
+					src="/imgs/icons/jacg.webp"
 					alt="Jacg image profile"
-					width="60"
-					height="60"
+					width="100"
+					height="100"
 				/>
 			</div>
 			<!-- Say -->
 			<div class="py-2 mt-2">
 				<h1 class="text-xl font-bold dark:text-white">
-					Hola soy Joe Casañas👋
+					Hola soy Joe Casañas<span class="say__hi">👋</span>
 				</h1>
 				<p class="py-2 dark:text-gray-50">
-					Desarrollador Frontend con 2 años de experiencia.
+					Desarrollador Frontend con +2 años de experiencia.
 				</p>
 			</div>
 			<!-- Links -->
