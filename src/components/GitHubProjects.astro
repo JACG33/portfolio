@@ -28,7 +28,7 @@ import SkeletonGitCard from "../components/SkeletonGitCard.astro";
 			const dynamicid = `popover${Math.ceil(Math.random() * 9999)}`;
 			return `
 						<div class="rounded-lg border border-blue-500 dark:border-white grid grid-cols-[50px_1fr] w-full h-fit max-w-80 mx-auto overflow-hidden group mb-2">
-							<div class="w-full h-full bg-blue-500 dark:bg-white bg-transparent flex items-center justify-center mx-auto">
+							<div class="w-full h-full bg-blue-500 dark:bg-white flex items-center justify-center mx-auto">
 							  <svg
 									xmlns="http://www.w3.org/2000/svg"
 									width="40"
@@ -75,8 +75,7 @@ import SkeletonGitCard from "../components/SkeletonGitCard.astro";
 											        class="text-blue-500 underline"
 											        href="${urlHomePage}"
 											        target="_blank"
-											        >Visitar Pagina Web</a
-											      >`
+											        >Visitar Pagina Web</a>`
 													: ""
 											}
 
@@ -84,8 +83,7 @@ import SkeletonGitCard from "../components/SkeletonGitCard.astro";
 									        class="text-blue-500 underline"
 									        href="${urlRep}"
 									        target="_blank"
-									        >Visitar Repositorio</a
-									      >
+									        >Visitar Repositorio</a>
 						        </div>
 						        
 						      </div>
